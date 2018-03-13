@@ -17,7 +17,7 @@
      2.而如果不调用super，cls入栈后，cls下一个位置是_cmd(SEL名为"play")，self.name返回的就是SEL，用SEL去调用对象的一系列方法就会崩溃；
      3.按以上两点可以推出，只要cls入栈前，栈顶是对象即可，经测试证明，推论是成立的。
      */
-    [Person new];
+    
     [super paly];
 //    NSString *str = @"test";
     
@@ -53,17 +53,19 @@
      (lldb) po obj
      <Sark: 0x7ffeefbff4a8>                                     //栈上的地址0x7ffeefbff4a8被当作Sark对象使用，为什么会是Sark对象，
                                                                 这是问题的关键，后面的现象完全遵守上面验证的内存分布
-                                                                因为
-                                                                objc-runtime-new.h定义x86_64中FAST_DATA_MASK = 0x00007ffffffffff8UL
-                                                                0x001d800100002e3d & FAST_DATA_MASK的意义：取0x001d800100002e3d中倒数第47到倒数第4位
+                                                                因为，类和对象都是objc_object类型，前64位都是union isa_t变量即isa指针
+                                                                objc-private.h定义x86_64中ISA_MASK = 0x00007ffffffffff8UL
+                                                                0x001d800100002e3d & ISA_MASK的意义：取0x001d800100002e3d中倒数第47到倒数第4位
                                                                 共44位，然后左移3位，即shiftcls
      
-                                                                0x001d800100002e3d & FAST_DATA_MASK = 0x0000000100002e38
-                                                                0x0000000100002e38 & FAST_DATA_MASK = 0x0000000100002e38
+                                                                0x001d800100002e3d & ISA_MASK = 0x0000000100002e38
+                                                                0x0000000100002e38 & ISA_MASK = 0x0000000100002e38
                                                                 即shiftcls相同
      
-                                                                从以上可以推论，64位架构下，任意对象的前64位跟FAST_DATA_MASK按位与就可以得到他的类对象
-                                                                arm64中，shiftcls是33位，所以FAST_DATA_MASK = 0x0000000FFFFFFFF8UL
+                                                                0x001d800100002e3d中的1d8是magic用于调试器判断当前对象是真的对象还是没有初始化的空间
+     
+                                                                从以上可以推论，64位架构下，任意对象的前64位跟ISA_MASK按位与就可以得到他的类对象
+                                                                arm64中，shiftcls是33位，所以ISA_MASK = 0x0000000FFFFFFFF8UL
                                                                 经测试，证明推论正确
      
      (lldb) x/10g 0x7ffeefbff4a8                                //打印该“对象”内存分布
