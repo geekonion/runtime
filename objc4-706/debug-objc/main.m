@@ -95,7 +95,7 @@ void runtimeTest() {
      //doSomething的setter方法的实现，注意和-setName:实现的区别
      static void _I_Animal_setDoSomething_(Animal * self, SEL _cmd, void (*doSomething)()) { objc_setProperty (self, _cmd, __OFFSETOFIVAR__(struct Animal, _doSomething), (id)doSomething, 0, 1); }
      
-     3).定义struct _ivar_t 、struct _class_ro_t 和 struct _class_t及其他需要的类型
+     3).申明struct _ivar_t 、struct _class_ro_t 和 struct _class_t及其他需要的类型
      struct _ivar_t {
         unsigned long int *offset;  // pointer to ivar offset location
         const char *name;
