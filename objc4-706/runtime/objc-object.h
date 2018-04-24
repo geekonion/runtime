@@ -273,8 +273,12 @@ objc_object::changeIsa(Class newCls)
             assert(newCls->classArrayIndex() > 0);
             newisa.indexcls = (uintptr_t)newCls->classArrayIndex();
 #else
-            if (oldisa.bits == 0) newisa.bits = ISA_MAGIC_VALUE;
-            else newisa = oldisa;
+            if (oldisa.bits == 0) {
+                newisa.bits = ISA_MAGIC_VALUE;
+            }
+            else {
+                newisa = oldisa;
+            }
             // isa.magic is part of ISA_MAGIC_VALUE
             // isa.nonpointer is part of ISA_MAGIC_VALUE
             newisa.has_cxx_dtor = newCls->hasCxxDtor();

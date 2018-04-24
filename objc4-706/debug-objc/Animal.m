@@ -39,6 +39,6 @@
 }
 
 - (void)dealloc {
-//    NSLog(@"*******Animal: %@ dealloc*******", self.class);
+    NSLog(@"*******Animal: %@ dealloc*******", self.class);
 }
 @end

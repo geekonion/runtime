@@ -10,6 +10,7 @@
 #import "Person.h"
 #import "Cat.h"
 #import "Son.h"
+#import "objc-class.h"
 
 id (*method)(id, SEL, ...);
 
@@ -17,15 +18,23 @@ IMP class_getMethodImplementation(Class cls, SEL sel);
 
 void runtimeTest();
 void sarkTest();
+void test();
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //测试运行时
 //        runtimeTest();
         
-        sarkTest();
+//        sarkTest();
+        test();
     }
     return 0;
+}
+
+void test() {
+    Animal *animal = [[Animal alloc] init];
+    Class cls = object_setClass(animal, [Person class]);
+    NSLog(@"%@", cls);
 }
 
 void sarkTest() {
@@ -132,7 +141,7 @@ void runtimeTest() {
      //其作用是将作用的函数或数据放入指定名为"section_name"输入段。这里的输入段是相对于Link程序来说的，Link程序的输出段对应可执行文件或库的输入段
      //Link程序会根据一定的规则，将不同的输入段重新组合到不同的输出段中，输入段和输出段可以完全不同。
      
-     //记录ivar的地址，可以看出在不同地方第一的ivar和property生成的ivar本质上是没有任何区别的，没有属性和ivar，则不会生成
+     //记录ivar的地址，可以看出在不同地方定义的ivar和property生成的ivar本质上是没有任何区别的，没有属性和ivar，则不会生成
      extern "C" unsigned long int OBJC_IVAR_$_Animal$_publicIva __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Animal, _publicIva);
      extern "C" unsigned long int OBJC_IVAR_$_Animal$_privateIva1 __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Animal, _privateIva1);
      extern "C" unsigned long int OBJC_IVAR_$_Animal$_privateIva2 __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Animal, _privateIva2);

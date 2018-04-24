@@ -30,4 +30,10 @@
     NSLog(@"%@ run", self);
 }
 
+- (void)dealloc {
+    NSLog(@"*******Person: %@ dealloc*******", self.class);
+}
+
+
+
 @end
