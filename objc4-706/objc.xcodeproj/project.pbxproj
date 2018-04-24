@@ -33,6 +33,8 @@
 		5A20A45C202D3A7A002BB834 /* NSObject+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20A45B202D3A7A002BB834 /* NSObject+extension.m */; };
 		5A20A45F202D442B002BB834 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20A45E202D442B002BB834 /* Animal.m */; };
 		5A20A462202D5CD3002BB834 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20A461202D5CD3002BB834 /* Cat.m */; };
+		5A311234208F2C1800911640 /* RealClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311233208F2C1800911640 /* RealClass.m */; };
+		5A311237208F2C2B00911640 /* ReplaceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311236208F2C2B00911640 /* ReplaceClass.m */; };
 		5A85A20A202DA897003C348C /* objc-runtime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 838485E40D6D68A200CEA253 /* objc-runtime.mm */; };
 		5A85A20B202DA8A0003C348C /* objc-runtime-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 838485E20D6D68A200CEA253 /* objc-runtime-old.mm */; };
 		830F2A740D737FB800392440 /* objc-msg-arm.s in Sources */ = {isa = PBXBuildFile; fileRef = 830F2A690D737FB800392440 /* objc-msg-arm.s */; };
@@ -181,6 +183,10 @@
 		5A20A45E202D442B002BB834 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		5A20A460202D5CD3002BB834 /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		5A20A461202D5CD3002BB834 /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		5A311232208F2C1800911640 /* RealClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealClass.h; sourceTree = "<group>"; };
+		5A311233208F2C1800911640 /* RealClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealClass.m; sourceTree = "<group>"; };
+		5A311235208F2C2B00911640 /* ReplaceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplaceClass.h; sourceTree = "<group>"; };
+		5A311236208F2C2B00911640 /* ReplaceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceClass.m; sourceTree = "<group>"; };
 		830F2A690D737FB800392440 /* objc-msg-arm.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-arm.s"; path = "runtime/Messengers.subproj/objc-msg-arm.s"; sourceTree = "<group>"; };
 		830F2A6A0D737FB800392440 /* objc-msg-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-i386.s"; path = "runtime/Messengers.subproj/objc-msg-i386.s"; sourceTree = "<group>"; };
 		830F2A720D737FB800392440 /* objc-msg-x86_64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-x86_64.s"; path = "runtime/Messengers.subproj/objc-msg-x86_64.s"; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
@@ -465,6 +471,10 @@
 				5A1E331E204569F70090BD29 /* Father.m */,
 				5A1E332020456A530090BD29 /* Son.h */,
 				5A1E332120456A530090BD29 /* Son.m */,
+				5A311232208F2C1800911640 /* RealClass.h */,
+				5A311233208F2C1800911640 /* RealClass.m */,
+				5A311235208F2C2B00911640 /* ReplaceClass.h */,
+				5A311236208F2C2B00911640 /* ReplaceClass.m */,
 			);
 			path = "debug-objc";
 			sourceTree = "<group>";
@@ -710,9 +720,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1E332220456A530090BD29 /* Son.m in Sources */,
+				5A311234208F2C1800911640 /* RealClass.m in Sources */,
 				5A20A45C202D3A7A002BB834 /* NSObject+extension.m in Sources */,
 				5A20A45F202D442B002BB834 /* Animal.m in Sources */,
 				5A1E331C204569E50090BD29 /* Sark.m in Sources */,
+				5A311237208F2C2B00911640 /* ReplaceClass.m in Sources */,
 				3F5AEB851E14F2A1000CAFA1 /* Person.m in Sources */,
 				5A1E331F204569F70090BD29 /* Father.m in Sources */,
 				3F1BA99F1E14DA4E007C535F /* main.m in Sources */,

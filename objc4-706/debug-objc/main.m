@@ -11,6 +11,8 @@
 #import "Cat.h"
 #import "Son.h"
 #import "objc-class.h"
+#import "RealClass.h"
+#import "ReplaceClass.h"
 
 id (*method)(id, SEL, ...);
 
@@ -19,6 +21,7 @@ IMP class_getMethodImplementation(Class cls, SEL sel);
 void runtimeTest();
 void sarkTest();
 void test();
+void testKVO();
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -32,8 +35,10 @@ int main(int argc, const char * argv[]) {
 }
 
 void test() {
-    Animal *animal = [[Animal alloc] init];
-    Class cls = object_setClass(animal, [Person class]);
+    //被替换后，不会调用真实对象的dealloc，真实对象的属性和ivar不会释放，造成内存泄漏
+    RealClass *obj = [[RealClass alloc] init];
+    obj.testLeak1 = [Animal new];
+    Class cls = object_setClass(obj, [ReplaceClass class]);
     NSLog(@"%@", cls);
 }
 
