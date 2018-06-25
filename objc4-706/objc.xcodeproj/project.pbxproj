@@ -35,6 +35,9 @@
 		5A20A462202D5CD3002BB834 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20A461202D5CD3002BB834 /* Cat.m */; };
 		5A311234208F2C1800911640 /* RealClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311233208F2C1800911640 /* RealClass.m */; };
 		5A311237208F2C2B00911640 /* ReplaceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311236208F2C2B00911640 /* ReplaceClass.m */; };
+		5A31124F208F478000911640 /* MAKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A31124E208F478000911640 /* MAKVONotificationCenter.m */; };
+		5A311252208F47C900911640 /* KVOClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311251208F47C900911640 /* KVOClass.m */; };
+		5A311258208F48D200911640 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A311257208F48D200911640 /* Observer.m */; };
 		5A85A20A202DA897003C348C /* objc-runtime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 838485E40D6D68A200CEA253 /* objc-runtime.mm */; };
 		5A85A20B202DA8A0003C348C /* objc-runtime-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 838485E20D6D68A200CEA253 /* objc-runtime-old.mm */; };
 		830F2A740D737FB800392440 /* objc-msg-arm.s in Sources */ = {isa = PBXBuildFile; fileRef = 830F2A690D737FB800392440 /* objc-msg-arm.s */; };
@@ -187,6 +190,12 @@
 		5A311233208F2C1800911640 /* RealClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealClass.m; sourceTree = "<group>"; };
 		5A311235208F2C2B00911640 /* ReplaceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplaceClass.h; sourceTree = "<group>"; };
 		5A311236208F2C2B00911640 /* ReplaceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceClass.m; sourceTree = "<group>"; };
+		5A31124D208F478000911640 /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
+		5A31124E208F478000911640 /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
+		5A311250208F47C900911640 /* KVOClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOClass.h; sourceTree = "<group>"; };
+		5A311251208F47C900911640 /* KVOClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOClass.m; sourceTree = "<group>"; };
+		5A311256208F48D200911640 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		5A311257208F48D200911640 /* Observer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Observer.m; sourceTree = "<group>"; };
 		830F2A690D737FB800392440 /* objc-msg-arm.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-arm.s"; path = "runtime/Messengers.subproj/objc-msg-arm.s"; sourceTree = "<group>"; };
 		830F2A6A0D737FB800392440 /* objc-msg-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-i386.s"; path = "runtime/Messengers.subproj/objc-msg-i386.s"; sourceTree = "<group>"; };
 		830F2A720D737FB800392440 /* objc-msg-x86_64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-msg-x86_64.s"; path = "runtime/Messengers.subproj/objc-msg-x86_64.s"; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
@@ -475,6 +484,12 @@
 				5A311233208F2C1800911640 /* RealClass.m */,
 				5A311235208F2C2B00911640 /* ReplaceClass.h */,
 				5A311236208F2C2B00911640 /* ReplaceClass.m */,
+				5A31124D208F478000911640 /* MAKVONotificationCenter.h */,
+				5A31124E208F478000911640 /* MAKVONotificationCenter.m */,
+				5A311250208F47C900911640 /* KVOClass.h */,
+				5A311251208F47C900911640 /* KVOClass.m */,
+				5A311256208F48D200911640 /* Observer.h */,
+				5A311257208F48D200911640 /* Observer.m */,
 			);
 			path = "debug-objc";
 			sourceTree = "<group>";
@@ -723,12 +738,15 @@
 				5A311234208F2C1800911640 /* RealClass.m in Sources */,
 				5A20A45C202D3A7A002BB834 /* NSObject+extension.m in Sources */,
 				5A20A45F202D442B002BB834 /* Animal.m in Sources */,
+				5A311258208F48D200911640 /* Observer.m in Sources */,
 				5A1E331C204569E50090BD29 /* Sark.m in Sources */,
 				5A311237208F2C2B00911640 /* ReplaceClass.m in Sources */,
 				3F5AEB851E14F2A1000CAFA1 /* Person.m in Sources */,
+				5A31124F208F478000911640 /* MAKVONotificationCenter.m in Sources */,
 				5A1E331F204569F70090BD29 /* Father.m in Sources */,
 				3F1BA99F1E14DA4E007C535F /* main.m in Sources */,
 				5A20A462202D5CD3002BB834 /* Cat.m in Sources */,
+				5A311252208F47C900911640 /* KVOClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

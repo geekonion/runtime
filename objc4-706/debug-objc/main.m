@@ -13,6 +13,9 @@
 #import "objc-class.h"
 #import "RealClass.h"
 #import "ReplaceClass.h"
+#import "KVOClass.h"
+#import "Observer.h"
+#import "MAKVONotificationCenter.h"
 
 id (*method)(id, SEL, ...);
 
@@ -21,7 +24,7 @@ IMP class_getMethodImplementation(Class cls, SEL sel);
 void runtimeTest();
 void sarkTest();
 void test();
-void testKVO();
+void testMAKVO();
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -29,9 +32,24 @@ int main(int argc, const char * argv[]) {
 //        runtimeTest();
         
 //        sarkTest();
-        test();
+//        test();
+        testMAKVO();
     }
     return 0;
+}
+
+void testMAKVO() {
+    KVOClass *obj = [KVOClass new];
+    
+    Observer *observer = [Observer new];
+    
+    [obj addObserver:observer keyPath:@"kvoProperty" options:0 block:^(MAKVONotification *notification) {
+        NSLog(@"%@", notification);
+    }];
+    
+    obj.kvoProperty = @"new value";
+    
+    [obj removeObserver:observer keyPath:@"kvoProperty" selector:@selector(observePath:object:change:info:)];
 }
 
 void test() {
